@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Multi-page template</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-rc.1/jquery.mobile-1.3.0-rc.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.0-rc.1/jquery.mobile-1.3.0-rc.1.min.js"></script>
+    <style>
+        .nav-search .ui-btn-up-a {
+            background-image: none;
+            background-color: #333;
+        }
+        .nav-search .ui-btn-inner {
+            border-top: 1px solid #888;
+            border-color: rgba(255, 255, 255, .1);
+        }
+        .nav-search .ui-btn.ui-first-child {
+            border-top-width: 0;
+            background: #111;
+        }
+        .userform {
+			padding: .8em 1.2em;
+		}
+        .userform h2 {
+			color: #555;
+			margin: 0.3em 0 .8em 0;
+			padding-bottom: .5em;
+			border-bottom: 1px solid rgba(0,0,0,.1);
+		}
+        .userform label {
+			display: block;
+			margin-top: 1.2em;
+		}
+        .ui-grid-a {
+			margin-top: 1em;
+			padding-top: .8em;
+			margin-top: 1.4em;
+			border-top: 1px solid rgba(0,0,0,.1);
+		}
+    </style>
+</head>
+<body>
+<div data-role="page" class="jqm-demos ui-responsive-panel" id="panel-fixed-page1">
+
+    <div data-role="header" data-theme="f" data-position="fixed" class="ui-bar-c">
+        <h1>Jquery Demos</h1>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add-form" data-icon="grid" data-iconpos="notext">Add</a>
+    </div>
+    <!-- /header -->
+<div data-role="content" class="jqm-content ui-content" role="main">
+
+			<h1>Buttons </h1>
+<p><a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back">Back to page "one"</a></p>
+			<p class="jqm-intro">Buttons are core widgets in jQuery Mobile and are used within a wide range of other plugins. The button markup is flexible and can be created from links or form buttons.
+			</p>
+
+			<h2 id="button-markup">Basic markup</h2>
+
+			<p>Use anchor links (<code>a</code> elements) to mark up navigation buttons, and <code>input</code> or <code>button</code> elements for form submission. By default, all buttons in the body content are styled as block-level elements so they fill the width of the screen:</p>
+
+			<div data-demo-html="true">
+				<a href="#" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Anchor</span></span></a>
+				<form>
+					
+					
+					
+					
+				</form>
+			</div><!--/demo-html -->
+
+			<h2 id="button-inline">Inline</h2>
+
+			<p>If you have multiple buttons that should sit side-by-side on the same line, add the <code>data-inline="true"</code> attribute to each button. This will style the buttons to be the width of their content so the buttons sit on the same line. </p>
+
+			<div data-demo-html="true">
+				<p>
+					<a href="#" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline"><span class="ui-btn-inner"><span class="ui-btn-text">True</span></span></a>
+					<a href="#" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">False</span></span></a>
+				</p>
+			</div><!--/demo-html -->
+
+			<h2 id="button-theme">Theme</h2>
+
+			<p>Buttons can be manually assigned any of the button color swatches from the theme to add visual contrast with their container by adding the <code> data-theme</code> attribute on the button markup and specifying a swatch letter. When a link is added to a container, it is automatically assigned a theme swatch letter that matches its parent bar or content box to visually integrate the button into the parent container, like a chameleon.</p>
+
+			<div data-demo-html="true">
+				<p>
+					<a href="#" data-role="button" data-theme="a" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all ui-btn-inline"><span class="ui-btn-inner"><span class="ui-btn-text">A</span></span></a>
+					<a href="#" data-role="button" data-theme="b" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all ui-btn-inline"><span class="ui-btn-inner"><span class="ui-btn-text">B</span></span></a>
+					<a href="#" data-role="button" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">C</span></span></a>
+					<a href="#" data-role="button" data-theme="d" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-up-d"><span class="ui-btn-inner"><span class="ui-btn-text">D</span></span></a>
+					<a href="#" data-role="button" data-theme="e" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-btn-up-e ui-shadow ui-btn-corner-all ui-btn-inline"><span class="ui-btn-inner"><span class="ui-btn-text">E</span></span></a>
+				</p>
+			</div><!--/demo-html -->
+
+			<h2 id="button-mini">Mini</h2>
+
+			<p>For a more compact version that is useful in toolbars and tight spaces, add the <code>data-mini="true"</code> attribute to the button to create a mini version. </p>
+
+			<div data-demo-html="true">
+				<p>
+					<a href="#" data-role="button" data-mini="true" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-mini ui-btn-inline"><span class="ui-btn-inner"><span class="ui-btn-text">Cancel</span></span></a>
+					<a href="#" data-role="button" data-mini="true" data-inline="true" data-icon="check" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-inline ui-btn-icon-left ui-btn-up-b"><span class="ui-btn-inner"><span class="ui-btn-text">Place order</span><span class="ui-icon ui-icon-check ui-icon-shadow">&nbsp;</span></span></a>
+				</p>
+			</div><!--/demo-html -->
+
+			<h2 id="button-icons">Icons</h2>
+
+			<p>An <a href="../icons/index.html" class="ui-link">icon</a> can be added to a button by adding a <code> data-icon</code> attribute on the anchor specifying the icon to display.</p>
+
+			<div data-demo-html="true">
+				<a href="#" data-role="button" data-icon="plus" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Plus" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Plus</span><span class="ui-icon ui-icon-plus ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="minus" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Minus" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Minus</span><span class="ui-icon ui-icon-minus ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Delete" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Delete</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Arrow left" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Arrow left</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Arrow right" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Arrow right</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="arrow-u" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Arrow up" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Arrow up</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="arrow-d" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Arrow down" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Arrow down</span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="check" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Check" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Check</span><span class="ui-icon ui-icon-check ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="gear" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Gear" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Gear</span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="refresh" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Refresh" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Refresh</span><span class="ui-icon ui-icon-refresh ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="forward" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Forward" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Forward</span><span class="ui-icon ui-icon-forward ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="back" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Back" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-back ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="grid" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Grid" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Grid</span><span class="ui-icon ui-icon-grid ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="star" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Star" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Star</span><span class="ui-icon ui-icon-star ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="alert" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Alert" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Alert</span><span class="ui-icon ui-icon-alert ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="info" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Info" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Info</span><span class="ui-icon ui-icon-info ui-icon-shadow">&nbsp;</span></span></a>
+		        <a href="#" data-role="button" data-icon="home" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Home" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Home</span><span class="ui-icon ui-icon-home ui-icon-shadow">&nbsp;</span></span></a>
+		        <a href="#" data-role="button" data-icon="search" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Search" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Search</span><span class="ui-icon ui-icon-search ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Bars" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Bars</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="edit" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Edit" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Edit</span><span class="ui-icon ui-icon-edit ui-icon-shadow">&nbsp;</span></span></a>
+			</div><!--/demo-html -->
+
+			<h2 id="button-icon-position">Icon position</h2>
+
+			<p>By default, all icons in buttons are placed to the left of the button text. This default may be overridden using the <code> data-iconpos</code> attribute to set the icon to the right, above (top) or below (bottom) the text. You can also create an icon-only button, by setting the <code> data-iconpos</code> attribute to <code>notext</code>. The button plugin will hide the text on-screen, but add it as a <code>title</code> attribute on the link to provide context for screen readers and devices that support tooltips.</p>
+
+			<div data-demo-html="true">
+					<a href="#" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Text only</span></span></a>
+					<a href="#" data-role="button" data-icon="arrow-l" data-iconpos="left" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-left ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Left</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow">&nbsp;</span></span></a>
+					<a href="#" data-role="button" data-icon="arrow-r" data-iconpos="right" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-right"><span class="ui-btn-inner"><span class="ui-btn-text">Right</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+					<a href="#" data-role="button" data-icon="arrow-u" data-iconpos="top" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-top"><span class="ui-btn-inner"><span class="ui-btn-text">Top</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow">&nbsp;</span></span></a>
+					<a href="#" data-role="button" data-icon="arrow-d" data-iconpos="bottom" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-bottom"><span class="ui-btn-inner"><span class="ui-btn-text">Bottom</span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow">&nbsp;</span></span></a>
+					<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" title="Icon only" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Icon only</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a>
+			</div><div class="jqm-view-source-link"><a href="#popupDemo" data-rel="popup" data-role="button" data-icon="arrow-u" data-mini="true" data-inline="true" data-shadow="false" data-corners="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-corner-all ui-mini ui-btn-inline ui-btn-icon-left" aria-haspopup="true" aria-owns="popupDemo" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text">View Source</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow">&nbsp;</span></span></a></div><!--/demo-html -->
+
+			<a href="#ui-page-top" class="jqm-deeplink ui-link">Return to top<span class="ui-icon ui-icon-arrow-u">&nbsp;</span></a><h2 id="button-vertical-group">Vertical group</h2>
+
+			<p>To visually group a set of buttons to form a single block, wrap a set of buttons in a container with the <code> data-role="controlgroup"</code> attribute — the framework will create a vertical button group, remove all margins and drop shadows between the buttons, and only round the first and last buttons of the set to create the effect that they are grouped together. </p>
+
+			<div data-demo-html="true">
+				<div data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" aria-disabled="false" data-disabled="false" data-shadow="false" data-corners="true" data-exclude-invisible="true" data-type="vertical" data-mini="false" data-init-selector=":jqmData(role='controlgroup')"><div class="ui-controlgroup-controls"><div class="ui-controlgroup-controls">
+					<a href="#" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-first-child ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Timeline</span></span></a>
+					<a href="#" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Mentions</span></span></a>
+					<a href="#" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-last-child ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Retweets</span></span></a>
+				</div></div></div>
+			</div><div class="jqm-view-source-link"><a href="#popupDemo" data-rel="popup" data-role="button" data-icon="arrow-u" data-mini="true" data-inline="true" data-shadow="false" data-corners="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-corner-all ui-mini ui-btn-inline ui-btn-icon-left" aria-haspopup="true" aria-owns="popupDemo" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text">View Source</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow">&nbsp;</span></span></a></div><!--/demo-html -->
+
+			<a href="#ui-page-top" class="jqm-deeplink ui-link">Return to top<span class="ui-icon ui-icon-arrow-u">&nbsp;</span></a><h2 id="button-horizontal-group">Horizontal group</h2>
+
+			<p>By adding the <code>data-type="horizontal"</code> attribute to the <code>controlgroup</code> container, you can swap to a horizontal-style group that floats the buttons side-by-side and sets the width to only be large enough to fit the content.</p>
+
+			<div data-demo-html="true">
+				<div data-role="controlgroup" data-type="horizontal" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal" aria-disabled="false" data-disabled="false" data-shadow="false" data-corners="true" data-exclude-invisible="true" data-mini="false" data-init-selector=":jqmData(role='controlgroup')"><div class="ui-controlgroup-controls"><div class="ui-controlgroup-controls">
+					<a href="#" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-first-child"><span class="ui-btn-inner"><span class="ui-btn-text">Yes</span></span></a>
+					<a href="#" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all"><span class="ui-btn-inner"><span class="ui-btn-text">No</span></span></a>
+					<a href="#" data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all ui-last-child"><span class="ui-btn-inner"><span class="ui-btn-text">Maybe</span></span></a>
+				</div></div></div>
+			</div><div class="jqm-view-source-link"><a href="#popupDemo" data-rel="popup" data-role="button" data-icon="arrow-u" data-mini="true" data-inline="true" data-shadow="false" data-corners="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-corner-all ui-mini ui-btn-inline ui-btn-icon-left" aria-haspopup="true" aria-owns="popupDemo" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text">View Source</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow">&nbsp;</span></span></a></div><!--/demo-html -->
+
+			<p>Mini horizontal grouped buttons, icon-only:</p>
+			<div data-demo-html="true">
+				<div data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-corner-all ui-controlgroup ui-mini ui-controlgroup-horizontal" aria-disabled="false" data-disabled="false" data-shadow="false" data-corners="true" data-exclude-invisible="true" data-init-selector=":jqmData(role='controlgroup')"><div class="ui-controlgroup-controls"><div class="ui-controlgroup-controls">
+				    <a href="#" data-role="button" data-iconpos="notext" data-icon="plus" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Add" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-first-child"><span class="ui-btn-inner"><span class="ui-btn-text">Add</span><span class="ui-icon ui-icon-plus ui-icon-shadow">&nbsp;</span></span></a>
+				    <a href="#" data-role="button" data-iconpos="notext" data-icon="delete" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Delete" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all ui-btn-icon-notext"><span class="ui-btn-inner"><span class="ui-btn-text">Delete</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a>
+				    <a href="#" data-role="button" data-iconpos="notext" data-icon="grid" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="More" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-last-child"><span class="ui-btn-inner"><span class="ui-btn-text">More</span><span class="ui-icon ui-icon-grid ui-icon-shadow">&nbsp;</span></span></a>
+				</div></div></div>
+			</div><div class="jqm-view-source-link"><a href="#popupDemo" data-rel="popup" data-role="button" data-icon="arrow-u" data-mini="true" data-inline="true" data-shadow="false" data-corners="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-corner-all ui-mini ui-btn-inline ui-btn-icon-left" aria-haspopup="true" aria-owns="popupDemo" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text">View Source</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow">&nbsp;</span></span></a></div><!--/demo-html -->
+
+			<a href="#ui-page-top" class="jqm-deeplink ui-link">Return to top<span class="ui-icon ui-icon-arrow-u">&nbsp;</span></a><h2 id="button-corners-shadows">Corners &amp; shadows</h2>
+
+			<p>There are options for controlling the rounded corners (<code>data-corners</code>), drop shadow (<code>data-shadow</code>), and icon  shadow for the highlight under the icon disc (<code>data-iconshadow</code>).</p>
+
+			<div data-demo-html="true">
+				<a href="#" data-role="button" data-icon="gear" data-theme="b" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all ui-btn-icon-left"><span class="ui-btn-inner"><span class="ui-btn-text">Default</span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="gear" data-corners="false" data-theme="b" data-shadow="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-btn-up-b ui-shadow ui-btn-icon-left"><span class="ui-btn-inner"><span class="ui-btn-text">No rounded corners</span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="gear" data-shadow="false" data-theme="b" data-corners="true" data-iconshadow="true" data-wrapperels="span" class="ui-btn ui-btn-up-b ui-btn-corner-all ui-btn-icon-left"><span class="ui-btn-inner"><span class="ui-btn-text">No button shadow</span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></a>
+				<a href="#" data-role="button" data-icon="gear" data-iconshadow="false" data-theme="b" data-corners="true" data-shadow="true" data-wrapperels="span" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all ui-btn-icon-left"><span class="ui-btn-inner"><span class="ui-btn-text">No icon disc shadow</span><span class="ui-icon ui-icon-gear">&nbsp;</span></span></a>
+			</div><div class="jqm-view-source-link"><a href="#popupDemo" data-rel="popup" data-role="button" data-icon="arrow-u" data-mini="true" data-inline="true" data-shadow="false" data-corners="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-corner-all ui-mini ui-btn-inline ui-btn-icon-left" aria-haspopup="true" aria-owns="popupDemo" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text">View Source</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow">&nbsp;</span></span></a></div><!--/demo-html -->
+
+			<a href="#ui-page-top" class="jqm-deeplink ui-link">Return to top<span class="ui-icon ui-icon-arrow-u">&nbsp;</span></a><h2 id="Disabled">Disabled</h2>
+
+			<p>Form input or buttons can be disabled via the <code>disabled</code> attribute. Links styled like buttons have all the same visual options as true form-based buttons, but aren't part of the <code>button</code> plugin so the form button methods (enable, disable, refresh) aren't supported. If you need to disable a link-based button (or any element), apply the disabled class ui-disabled yourself with JavaScript to achieve the same effect.</p>
+
+			<div data-demo-html="true">
+				<a href="#" data-role="button" class="ui-disabled ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c"><span class="ui-btn-inner"><span class="ui-btn-text">Disabled anchor via class</span></span></a>
+				<form>
+					<div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" data-disabled="true" class="ui-disabled ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" aria-disabled="true"><span class="ui-btn-inner"><span class="ui-btn-text">Button with disabled attribute</span></span><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" data-disabled="true" class="ui-disabled ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" aria-disabled="true"><span class="ui-btn-inner"><span class="ui-btn-text">Button with disabled attribute</span></span><button disabled="disabled" class="ui-btn-hidden" data-disabled="true">Button with disabled attribute</button></div></div>
+					<div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" data-disabled="true" class="ui-disabled ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" aria-disabled="true"><span class="ui-btn-inner"><span class="ui-btn-text">Input with disabled attribute</span></span><div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" data-disabled="true" class="ui-disabled ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" aria-disabled="true"><span class="ui-btn-inner"><span class="ui-btn-text">Input with disabled attribute</span></span><input type="button" value="Input with disabled attribute" disabled="disabled" class="ui-btn-hidden" data-disabled="true"></div></div>
+				</form>
+			</div><div class="jqm-view-source-link"><a href="#popupDemo" data-rel="popup" data-role="button" data-icon="arrow-u" data-mini="true" data-inline="true" data-shadow="false" data-corners="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-up-c ui-btn-corner-all ui-mini ui-btn-inline ui-btn-icon-left" aria-haspopup="true" aria-owns="popupDemo" aria-expanded="false"><span class="ui-btn-inner"><span class="ui-btn-text">View Source</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow">&nbsp;</span></span></a></div><!--/demo-html -->
+
+	</div>
+    <!-- /content -->
+
+    <div data-role="footer" data-position="fixed" data-theme="f" class="ui-bar-c" style="height:40px">
+    	
+    </div><!-- /footer -->
+
+	<div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel" data-display="overlay">
+
+		<ul data-role="listview" data-theme="b" class="nav-search">
+            	<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                <li><a href="#panel-fixed-page2">Accordion</a></li>
+                <li><a href="#panel-fixed-page2">AJAX Navigation</a></li>
+                <li><a href="#panel-fixed-page2">Autocomplete</a></li>
+                <li><a href="#panel-fixed-page2">Buttons</a></li>
+                <li><a href="#panel-fixed-page2">Checkboxes</a></li>
+                <li><a href="#panel-fixed-page2">Collapsibles</a></li>
+                <li><a href="#panel-fixed-page2">Controlgroup</a></li>
+                <li><a href="#panel-fixed-page2">Dialogs</a></li>
+                <li><a href="#panel-fixed-page2">Fixed toolbars</a></li>
+                <li><a href="#panel-fixed-page2">Flip switch toggle</a></li>
+                <li><a href="#panel-fixed-page2">Footer toolbar</a></li>
+                <li><a href="#panel-fixed-page2">Form elements</a></li>
+                <li><a href="#panel-fixed-page2">Grids</a></li>
+                <li><a href="#panel-fixed-page2">Header toolbar</a></li>
+                <li><a href="#panel-fixed-page2">Icons</a></li>
+                <li><a href="#panel-fixed-page2">Links</a></li>
+                <li><a href="#panel-fixed-page2">Listviews</a></li>
+                <li><a href="#panel-fixed-page2">Loader overlay</a></li>
+                <li><a href="#panel-fixed-page2">Navbar</a></li>
+                <li><a href="#panel-fixed-page2">Navbar, persistent</a></li>
+                <li><a href="#panel-fixed-page2">Pages</a></li>
+                <li><a href="#panel-fixed-page2">New</span></a></li>
+                <li><a href="#panel-fixed-page2">Popup</a></li>
+                <li><a href="#panel-fixed-page2">Radio buttons</a></li>
+                <li><a href="#panel-fixed-page2">Select</a></li>
+                <li><a href="#panel-fixed-page2">Slider, single</a></li>
+                <li><a href="#panel-fixed-page2">New</span></a></li>
+                <li><a href="#panel-fixed-page2">New</span></a></li>
+                <li><a href="#panel-fixed-page2">New</span></a></li>
+                <li><a href="#panel-fixed-page2">Text inputs & textarea</a></li>
+                <li><a href="#panel-fixed-page2">Transitions</a></li>
+		</ul>
+
+	</div><!-- /panel -->
+
+	<div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="d" id="add-form">
+
+        <ul data-role="listview" data-theme="a" class="nav-search">
+            	<li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                <li><a href="#panel-fixed-page2">Accordion</a></li>
+                <li><a href="#panel-fixed-page2">AJAX Navigation</a></li>
+                <li><a href="#panel-fixed-page2">Autocomplete</a></li>
+                <li><a href="#panel-fixed-page2">Buttons</a></li>
+                <li><a href="#panel-fixed-page2">Checkboxes</a></li>
+                <li><a href="#panel-fixed-page2">Collapsibles</a></li>
+                <li><a href="#panel-fixed-page2">Controlgroup</a></li>
+                <li><a href="#panel-fixed-page2">Dialogs</a></li>
+                <li><a href="#panel-fixed-page2">Fixed toolbars</a></li>
+                <li><a href="#panel-fixed-page2">Flip switch toggle</a></li>
+                <li><a href="#panel-fixed-page2">Footer toolbar</a></li>
+                <li><a href="#panel-fixed-page2">Form elements</a></li>
+                <li><a href="#panel-fixed-page2">Grids</a></li>
+                <li><a href="#panel-fixed-page2">Header toolbar</a></li>
+                <li><a href="#panel-fixed-page2">Icons</a></li>
+                <li><a href="#panel-fixed-page2">Links</a></li>
+                <li><a href="#panel-fixed-page2">Listviews</a></li>
+                <li><a href="#panel-fixed-page2">Loader overlay</a></li>
+                <li><a href="#panel-fixed-page2">Navbar</a></li>
+                <li><a href="#panel-fixed-page2">Navbar, persistent</a></li>
+                <li><a href="#panel-fixed-page2">Pages</a></li>
+                <li><a href="#panel-fixed-page2">New</span></a></li>
+                <li><a href="#panel-fixed-page2">Popup</a></li>
+                <li><a href="#panel-fixed-page2">Radio buttons</a></li>
+                <li><a href="#panel-fixed-page2">Select</a></li>
+                <li><a href="#panel-fixed-page2">Slider, single</a></li>
+                <li><a href="#panel-fixed-page2">New</span></a></li>
+                <li><a href="#panel-fixed-page2">New</span></a></li>
+                <li><a href="#panel-fixed-page2">New</span></a></li>
+                <li><a href="#panel-fixed-page2">Text inputs & textarea</a></li>
+                <li><a href="#panel-fixed-page2">Transitions</a></li>
+		</ul>
+
+	</div><!-- /panel -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="panel-fixed-page2">
+
+    <div data-role="header" data-theme="f">
+        <h1>Landing page</h1>
+    </div><!-- /header -->
+
+    <div data-role="content" class="jqm-content">
+
+        <p>This is just a landing page.</p>
+
+        <a href="#panel-fixed-page1" data-role="button" data-inline="true" data-mini="true" data-icon="back" data-iconpos="left">Back</a>
+
+    </div><!-- /content -->
+
+</div><!-- /page -->
+</body>
+</html>
